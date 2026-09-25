@@ -20,9 +20,9 @@ const Navbar = () => {
     </>
   
   return (
-    <div className="sticky top-0">
+    <div className="sticky top-0 bg-[#0C0D10]">
     
-      <div className="flex justify-between md:justify-between lg:justify-between items-center shadow-sm container mx-auto  py-6 px-3 md:px-4 lg:px-0 gap-0 md:gap-8 lg:gap-0 ">
+      <div className="flex justify-between md:justify-between lg:justify-between items-center shadow-sm py-6 px-3 md:px-4 lg:px-8 gap-0 md:gap-8 lg:gap-0 ">
 
         {/* Hamburger */}
         <div className="dropdown lg:hidden">
