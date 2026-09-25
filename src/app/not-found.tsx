@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
 
 const NotFoundPage = () => {
   return (
@@ -20,9 +20,10 @@ const NotFoundPage = () => {
           have been moved or no longer exists.
         </p>
         <Link href="/" className="btn border-none text-black bg-[#C2F800] hover:bg-[#a8eb00]">
+        <HiOutlineArrowNarrowLeft />
           {" "}
           Go back home{" "}
-          <FaArrowRightLong />
+          
         </Link>
       </div>
     </section>

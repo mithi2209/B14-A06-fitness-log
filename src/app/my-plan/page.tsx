@@ -11,8 +11,6 @@ const MyPlanPage = () => {
             <PlanTabs></PlanTabs>
             <EmptyPlanTab></EmptyPlanTab>
             <SelectedPlansCard></SelectedPlansCard>
-
-
         </div>
     );
 };

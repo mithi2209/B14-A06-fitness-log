@@ -1,20 +1,24 @@
-
+"use client" ;
 import Link from "next/link";
 import logo from "@/assets/logo.png"
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 
 
 const Navbar = () => {
 
+  const pathname = usePathname();
+
+
     const links = <>
      
-        <li className="hover:text-[#C2F800] hover:bg-[#1A2312] py-1.5 px-4 rounded-full ">
-            <Link href="/WorkOuts">WorkOuts</Link>
+        <li>
+            <Link className={ pathname === "/WorkOuts" ? "hover:text-[#C2F800] hover:bg-[#1A2312] py-1.5 px-4 rounded-full" : ""} href="/WorkOuts">WorkOuts</Link>
         </li>
 
-        <li className="hover:text-[#C2F800] hover:bg-[#1A2312] py-1.5 px-4 rounded-full">
-            <Link href="/myPlanPage">My Plan</Link>
+        <li>
+            <Link className={ pathname === "/my-plan" ? "hover:text-[#C2F800] hover:bg-[#1A2312] py-1.5 px-4 rounded-full" : ""} href="/my-plan">My Plan</Link>
         </li>
      
     </>
@@ -77,7 +81,7 @@ const Navbar = () => {
           {/* Buttons */}
           <div className="gap-1 md:gap-0 lg:gap-5 flex justify-center items-center ">
 
-            <div className="btn border-none shadow-none bg-[#0C0D10] hover:bg-[#222630] font-inter font-medium text-sm md:text-base tracking-wide gap-2 p-2 md:p-4 hidden md:flex">
+            <div className="btn border-none shadow-none bg-[#0C0D10]  hover:bg-[#222630] font-inter font-medium text-sm md:text-base tracking-wide gap-2 p-2 md:p-4 hidden md:flex">
 
                 <a className="text-[#9CA3AF]">Plan</a>
                 <span className="bg-[#C2F800] text-[#1A2312] px-2 py-0.5 rounded-full">

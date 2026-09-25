@@ -1,7 +1,17 @@
+import { IExerciseLibraryDataTypes } from "@/app/Types/fitnessData";
 import ExerciseLibraryCards from "./ExerciseLibraryCards";
 
+const getAllLibraryData = async () => {
+     const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
+     const data = await res.json();
+     return(data);
+}
 
-const ExerciseLibrary = () => {
+
+const ExerciseLibrary = async() => {
+   const libraryData = await getAllLibraryData();
+   console.log(libraryData);
+
     return (
         <div className="mx-4 md:mx-6 lg:mx-9  my-10 md:my-14 lg:my-16">
             {/* Heading */}
@@ -12,7 +22,17 @@ const ExerciseLibrary = () => {
 
             {/* CARDS */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mt-10">
-                <ExerciseLibraryCards></ExerciseLibraryCards>
+               {
+                libraryData.slice(0 , 6).map((data: IExerciseLibraryDataTypes) =>{
+                    return(
+                    <ExerciseLibraryCards 
+                        key={data.id}
+                        data ={ data }>
+                    </ExerciseLibraryCards>
+                    );
+                })
+               }
+                
             </div>
         </div>
     );
