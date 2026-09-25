@@ -10,17 +10,18 @@ const Navbar = () => {
     const links = <>
      
         <li className="hover:text-[#C2F800] hover:bg-[#1A2312] py-1.5 px-4 rounded-full ">
-            <Link href="/src/app/WorkOuts">WorkOuts</Link>
+            <Link href="/WorkOuts">WorkOuts</Link>
         </li>
 
         <li className="hover:text-[#C2F800] hover:bg-[#1A2312] py-1.5 px-4 rounded-full">
-            <Link href="/src/app/My Plan">My Plan</Link>
+            <Link href="/myPlanPage">My Plan</Link>
         </li>
      
     </>
   
   return (
-    <div className="sticky top-0 bg-[#0C0D10]">
+    <div className="">
+      {/* sticky top-0 bg-[#0C0D10] */}
     
       <div className="flex justify-between md:justify-between lg:justify-between items-center shadow-sm py-6 px-3 md:px-4 lg:px-8 gap-0 md:gap-8 lg:gap-0 ">
 
@@ -61,7 +62,7 @@ const Navbar = () => {
                     src={logo} 
                     alt="navbar logo image">
                 </Image>
-                <a className="text-lg md:text-xl lg:text-2xl font-extrabold font-oswald tracking-wider text-white">FITLOG</a>
+                <Link href="/" className="text-lg md:text-xl lg:text-2xl font-extrabold font-oswald tracking-wider text-white">FITLOG</Link>
 
           </div>
           {/* links for Large device */}
