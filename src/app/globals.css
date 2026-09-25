@@ -1,2 +1,15 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@theme {
+    /* Font */
+  --font-inter: var(--font-inter);
+  --font-oswald: var(--font-oswald);
+
+    /* Bg Color */
+  --color-background: #0C0D11;
+}
+
+body {
+  background-color: var(--color-background);
+}

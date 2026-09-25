@@ -1,9 +1,13 @@
+import Banner from "@/Components/HomePage/Banner/Banner";
+import ExerciseLibrary from "@/Components/HomePage/ExerciseLibrary/ExerciseLibrary";
+
 
 
 export default function Home() {
   return (
     <div >
-        <h1>hello next.js</h1>
+        <Banner></Banner>
+        <ExerciseLibrary></ExerciseLibrary>
     </div>
   );
 }
