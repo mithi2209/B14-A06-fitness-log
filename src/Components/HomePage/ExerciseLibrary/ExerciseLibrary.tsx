@@ -23,7 +23,7 @@ const ExerciseLibrary = async() => {
             {/* CARDS */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mt-10">
                {
-                libraryData.slice(0 , 6).map((data: IExerciseLibraryDataTypes) =>{
+                libraryData.map((data: IExerciseLibraryDataTypes) =>{
                     return(
                     <ExerciseLibraryCards 
                         key={data.id}

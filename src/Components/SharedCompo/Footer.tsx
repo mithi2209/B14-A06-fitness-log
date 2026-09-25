@@ -6,7 +6,7 @@ import FooterLogo from "@/assets/footer-logo.png" ;
 const Footer = () => {
     return (
        
-        <div className="">
+        <div className=" ">
             <div className="flex flex-col md:flex-col lg:flex-row gap-5 justify-center lg:justify-between items-center py-6 px-3 md:px-4 lg:px-8">
 
                 <div className="flex justify-center items-center  gap-1.5 md:gap-3">

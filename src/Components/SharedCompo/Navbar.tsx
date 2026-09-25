@@ -14,11 +14,11 @@ const Navbar = () => {
     const links = <>
      
         <li>
-            <Link className={ pathname === "/WorkOuts" ? "hover:text-[#C2F800] hover:bg-[#1A2312] py-1.5 px-4 rounded-full" : ""} href="/WorkOuts">WorkOuts</Link>
+            <Link className={ pathname === "/WorkOuts" ? "text-[#C2F800] bg-[#1A2312] py-2 px-4 rounded-full" : ""} href="/WorkOuts">WorkOuts</Link>
         </li>
 
         <li>
-            <Link className={ pathname === "/my-plan" ? "hover:text-[#C2F800] hover:bg-[#1A2312] py-1.5 px-4 rounded-full" : ""} href="/my-plan">My Plan</Link>
+            <Link className={ pathname === "/my-plan" ? "text-[#C2F800] bg-[#1A2312] py-2 px-4 rounded-full" : ""} href="/my-plan">My Plan</Link>
         </li>
      
     </>
@@ -70,8 +70,8 @@ const Navbar = () => {
 
           </div>
           {/* links for Large device */}
-          <div className=" hidden lg:flex">
-                <ul className="menu menu-horizontal  px-1 font-inter text-base text-[#9CA3AF] font-semibold">
+          <div className=" hidden lg:flex ">
+                <ul className="menu menu-horizontal px-1 font-inter text-base text-[#9CA3AF] font-semibold gap-2">
 
            {links}
 
