@@ -3,6 +3,7 @@ import { Inter,  Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/SharedCompo/Navbar";
 import Footer from "@/Components/SharedCompo/Footer";
+import WorkoutProvider from "@/context/WorkoutProvider";
 
 
 const inter = Inter({
@@ -30,10 +31,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${oswald.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar></Navbar>
-          {children}
-          <div className="border-b"></div>
-        <Footer></Footer>
+        <WorkoutProvider>
+          <Navbar></Navbar>
+            {children}
+            <div className="border-b"></div>
+          <Footer></Footer>
+        </WorkoutProvider>
       </body>
 
     </html>

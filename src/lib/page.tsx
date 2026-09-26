@@ -1,11 +1,9 @@
 
 
-const page = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
+const getAllLibraryData = async () => {
+     const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
+     const data = await res.json();
+     return(data);
+}
 
-export default page;
+export default getAllLibraryData;

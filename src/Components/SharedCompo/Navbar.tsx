@@ -14,9 +14,18 @@ const Navbar = () => {
     const links = <>
      
         <li>
-            <Link className={ pathname === "/WorkOuts" ? "text-[#C2F800] bg-[#1A2312] py-2 px-4 rounded-full" : ""} href="/WorkOuts">WorkOuts</Link>
+          <Link
+            className=
+            {
+              pathname.startsWith("/WorkOuts")
+              ? "text-[#C2F800] bg-[#1A2312] py-2 px-4 rounded-full"
+              : ""
+            }
+            href="/WorkOuts"
+          >
+            WorkOuts
+          </Link>
         </li>
-
         <li>
             <Link className={ pathname === "/my-plan" ? "text-[#C2F800] bg-[#1A2312] py-2 px-4 rounded-full" : ""} href="/my-plan">My Plan</Link>
         </li>

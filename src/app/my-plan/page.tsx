@@ -1,6 +1,7 @@
-import EmptyPlanTab from "@/Components/my-plan-stats/EmptyPlanTab";
+"use client";
 import PlanStats from "@/Components/my-plan-stats/PlanStats";
 import PlanTabs from "@/Components/my-plan-stats/PlanTabs";
+import EmptyPlanTab from "@/Components/my-plan-stats/EmptyPlanTab";
 import SelectedPlansCard from "@/Components/my-plan-stats/SelectedPlansCard";
 
 

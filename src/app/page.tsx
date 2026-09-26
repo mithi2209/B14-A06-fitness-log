@@ -3,11 +3,13 @@ import ExerciseLibrary from "@/Components/HomePage/ExerciseLibrary/ExerciseLibra
 
 
 
+
 export default function Home() {
   return (
     <div >
         <Banner></Banner>
         <ExerciseLibrary></ExerciseLibrary>
+        
     </div>
   );
 }
