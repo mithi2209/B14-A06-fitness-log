@@ -73,7 +73,7 @@ const SelectedPlansCard = ({ plans, activeTab }: SelectedPlansCardProps) => {
                 <div className="flex flex-col md:flex-row md:items-center gap-5">
                   {/* Exercise Image */}
                   <Image
-                    width={300}
+                    width={400}
                     height={200}
                     src={workout.image}
                     alt="exercise image"
@@ -81,7 +81,7 @@ const SelectedPlansCard = ({ plans, activeTab }: SelectedPlansCardProps) => {
                       w-full
                       h-50
                       sm:h-52
-                      md:w-40 md:h-24
+                      md:w-40 md:h-32
                       lg:w-44 lg:h-24
                       object-cover rounded-2xl"
                   />
@@ -89,7 +89,7 @@ const SelectedPlansCard = ({ plans, activeTab }: SelectedPlansCardProps) => {
                   {/* Exercise Information */}
                   <div className="flex-1">
                     {/* Name */}
-                    <h2 className="text-white text-lg md:text-xl font-bold uppercase">
+                    <h2 className="text-white text-lg md:text-base  lg:text-xl font-bold md:font-medium lg:font-bold uppercase">
                       {workout.name}
                     </h2>
 
@@ -127,7 +127,8 @@ const SelectedPlansCard = ({ plans, activeTab }: SelectedPlansCardProps) => {
                   </div>
 
                   {/* Buttons */}
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center  gap-4 md:gap-2 lg:gap-4">
+
                     {/* View Details */}
                     <Link href={`/WorkOuts/${workout.id}`}>
                       <button className="btn btn-outline border-[#39404d] text-gray-200 rounded-full px-3 lg:px-6 hover:text-black">
@@ -139,7 +140,7 @@ const SelectedPlansCard = ({ plans, activeTab }: SelectedPlansCardProps) => {
                     <button
                       onClick={() => handleMarkAsDone(workout)}
                       disabled={isDone}
-                      className={`btn border-none rounded-full px-3 lg:px-6
+                      className={`btn border-none shadow-none rounded-full px-3 lg:px-6
                             ${
                               isDone
                                 ? "bg-[#4D5B2E] text-gray-300 cursor-not-allowed"

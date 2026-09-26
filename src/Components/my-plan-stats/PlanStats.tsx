@@ -40,14 +40,14 @@ const PlanStats = ({
                 MY PLAN
                 </h2>
 
-                <p className="mt-3 mx-auto w-[70%] md:w-full font-inter text-sm lg:text-base text-[#9CA3AF]">
+                <p className="mt-3 mx-auto w-[80%] md:w-full font-inter text-sm lg:text-base text-[#9CA3AF]">
                 Cap of five lifts for today . Finish them , then load more.
                 </p>
             </div>
 
 
             {/* Stats div */}
-            <div className="card mt-14 py-5 px-6 rounded-2xl border border-[#232732] bg-[#13161D]">
+            <div className="card mt-10 py-5 px-6 rounded-2xl border border-[#232732] bg-[#13161D]">
 
                 <div className="flex justify-center items-center ">
 
@@ -57,7 +57,7 @@ const PlanStats = ({
                         Exercises
                         </p>
 
-                        <p className="mt-1 font-oswald text-4xl font-bold text-[#CCFF00]">
+                        <p className="mt-1 font-oswald text-4xl text-medium md:font-bold text-[#CCFF00]">
                        {totalExercises}
                         </p>
                     </div>
@@ -68,7 +68,7 @@ const PlanStats = ({
                         Minutes
                         </p>
 
-                        <p className="mt-1 font-oswald text-4xl font-bold text-white">
+                        <p className="mt-1 font-oswald text-4xl text-medium md:font-bold text-white">
                         {totalMinutes}
                         </p>
                     </div>
@@ -79,7 +79,7 @@ const PlanStats = ({
                         Calories
                         </p>
 
-                        <p className="mt-1 font-oswald text-4xl font-bold text-white">
+                        <p className="mt-1 font-oswald text-4xl text-medium md:font-bold text-white">
                         {totalCalories}
                         </p>
                     </div >
