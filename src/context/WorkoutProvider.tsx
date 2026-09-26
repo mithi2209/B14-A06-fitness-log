@@ -3,11 +3,24 @@
 
 import { IExerciseLibraryDataTypes } from "@/app/Types/fitnessData";
 import { createContext ,ReactNode, useState } from "react";
+;
+
+interface WorkoutContextType {
+  addToPlan: IExerciseLibraryDataTypes[];
+
+  setAddToPlan: React.Dispatch<
+    React.SetStateAction<IExerciseLibraryDataTypes[]>
+  >;
+
+  savePlan: IExerciseLibraryDataTypes[];
+
+  setSavePlan: React.Dispatch<
+    React.SetStateAction<IExerciseLibraryDataTypes[]>
+  >;
+}
 
 
-
-
-export const workoutContext = createContext({});
+export const workoutContext = createContext<WorkoutContextType | undefined>(undefined);
 
 const WorkoutProvider = ({ children}: { children: ReactNode }) => {
 

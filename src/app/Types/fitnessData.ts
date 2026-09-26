@@ -15,3 +15,10 @@ export interface IExerciseLibraryDataTypes {
 };
 
 
+export type PlanTab = "today" | "saved";
+
+export type SortOption =
+  | "duration"
+  | "rating"
+  | "caloriesBurned";
+

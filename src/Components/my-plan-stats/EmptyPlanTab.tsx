@@ -1,5 +1,8 @@
 import Link from 'next/link';
+
+
 const EmptyPlanTab = () => {
+  
   return (
     <section className="mx-4 md:mx-6 lg:mx-9  my-10 md:my-14 lg:my-16">
 

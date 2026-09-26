@@ -1,6 +1,36 @@
+import { IExerciseLibraryDataTypes } from '../../app/Types/fitnessData';
 
 
-const PlanStats = () => {
+interface PlanStatsProps {
+  plans: IExerciseLibraryDataTypes[];
+}
+
+const PlanStats = ({
+    plans ,
+    }:PlanStatsProps) => {
+
+
+        
+        // Total exercises
+        const totalExercises = plans.length;
+
+
+        // Total minutes
+        const totalMinutes = plans.reduce(
+            (total, workout) =>
+            total + Number(workout.duration || 0),
+            0
+        );
+
+
+        // Total calories
+        const totalCalories = plans.reduce(
+            (total, workout) =>
+            total +
+            Number(workout.caloriesBurned || 0),
+            0
+        );
+
     return (
         <div className="mx-4 md:mx-6 lg:mx-9  my-10 md:my-14 lg:my-16">
 
@@ -28,7 +58,7 @@ const PlanStats = () => {
                         </p>
 
                         <p className="mt-1 font-oswald text-4xl font-bold text-[#CCFF00]">
-                        0
+                       {totalExercises}
                         </p>
                     </div>
 
@@ -39,7 +69,7 @@ const PlanStats = () => {
                         </p>
 
                         <p className="mt-1 font-oswald text-4xl font-bold text-white">
-                        0
+                        {totalMinutes}
                         </p>
                     </div>
 
@@ -50,7 +80,7 @@ const PlanStats = () => {
                         </p>
 
                         <p className="mt-1 font-oswald text-4xl font-bold text-white">
-                        0
+                        {totalCalories}
                         </p>
                     </div >
 
