@@ -25,6 +25,7 @@ const AllLibraryCards = ({ data }: { data: TDataCardsProps }) => {
             </div>
             <div className="space-y-5 px-7 py-7 ">
                 <div className="flex items-center justify-center lg:justify-start  gap-3">
+                    
                     {data?.muscleGroups?.[0] && (
                     <div className="rounded-full px-3 py-1.5 bg-[#C2F800] cursor-pointer hover:bg-lime-300">
                         <span className="text-sm font-inter font-bold text-[#000000] text-center">

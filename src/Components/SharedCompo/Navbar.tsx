@@ -2,11 +2,15 @@
 import Link from "next/link";
 import logo from "@/assets/logo.png"
 import Image from "next/image";
+import { useContext } from "react";
+import { workoutContext } from "@/context/WorkoutProvider";
 import { usePathname } from "next/navigation";
 
 
 
 const Navbar = () => {
+
+  const {addToPlan, savePlan } = useContext(workoutContext);
 
   const pathname = usePathname();
 
@@ -94,7 +98,7 @@ const Navbar = () => {
 
                 <a className="text-[#9CA3AF]">Plan</a>
                 <span className="bg-[#C2F800] text-[#1A2312] px-2 py-0.5 rounded-full">
-                    0
+                    {addToPlan.length}
 
                 </span>
             </div>
@@ -103,7 +107,7 @@ const Navbar = () => {
 
                 <a className="text-[#9CA3AF]">Saved</a>
                 <span className="bg-[#1A2312] text-white px-2 py-0.5 rounded-full">
-                    0
+                    {savePlan.length}
                 </span>
             </div>
           

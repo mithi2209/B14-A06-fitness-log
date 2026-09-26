@@ -1,35 +1,40 @@
 import Image from "next/image";
+import WorkoutEmptyPage from "../page";
 import getAllLibraryData from "@/lib/page";
-import { FaRegBookmark } from "react-icons/fa";
 import { IExerciseLibraryDataTypes } from "@/app/Types/fitnessData";
 import AddToPlanBtn from "@/Components/addWorkoutPlanBtn/AddToPlanBtn";
+import SaveLaterBtn from "@/Components/saveBtn/SaveLaterBtn";
 
 interface IWorkoutDetailPageProps {
-    params: Promise<{
-        id: string;
-    }>;
+  params: Promise<{
+    id: string;
+  }>;
 }
 
-const WorkoutDetailPage = async ({ params } :IWorkoutDetailPageProps) => {
+const WorkoutDetailPage = async ({ params }: IWorkoutDetailPageProps) => {
+  const { id } = await params;
 
-    const { id } = await params;
+  const workoutData = await getAllLibraryData();
 
-    const workoutData = await getAllLibraryData();
+  const workout = workoutData.find(
+    (workout: IExerciseLibraryDataTypes) => String(workout.id) === String(id),
+  );
 
-    const workout = workoutData.find((
-        workout: IExerciseLibraryDataTypes) => String(workout.id) === String(id));
-
-        
-   
+  if (!workout) {
     return (
-          <div className="mx-4 md:mx-6 lg:mx-9  my-10 md:my-14 lg:my-16">
+     <WorkoutEmptyPage></WorkoutEmptyPage>
+    );
+  }
+
+  return (
+    <div className="mx-4 md:mx-6 lg:mx-9  my-10 md:my-14 lg:my-16">
       <div className="shadow-xl rounded-2xl border border-[#222630]  px-2 py-7 lg:py-10 lg:px-7">
         <div className="grid grid-cols-1 gap-8 p-5 md:grid-cols-1 lg:grid-cols-2 lg:gap-8 lg:p-0">
           {/* Workout Image */}
           <div>
             <Image
-            width={400}
-            height={300}
+              width={400}
+              height={300}
               src={workout?.image}
               alt="Workout Image"
               className="h-full min-h-[350px] w-full rounded-2xl object-cover md:min-h-[500px]"
@@ -45,18 +50,21 @@ const WorkoutDetailPage = async ({ params } :IWorkoutDetailPageProps) => {
 
             {/* Description */}
             <p className=" font-inter mt-2 text-sm md:text-base leading-6 text-gray-400">
-                {workout.description}
+              {workout.description}
             </p>
 
             {/* Categories */}
             <div className="mt-4 flex gap-2">
-              <span className="rounded-full bg-[#B8FF00] px-4 py-1.5 text-sm font-medium text-black">
-                {workout?.muscleGroups?.[0]}
-              </span>
-
-              <span className="rounded-full bg-[#B8FF00] px-4 py-1.5 text-sm font-medium text-black">
-                {workout?.muscleGroups?.[1]}
-              </span>
+              {workout?.muscleGroups?.[0] && (
+                <span className="rounded-full bg-[#B8FF00] px-4 py-1.5 text-sm font-medium text-black">
+                  {workout.muscleGroups[0]}
+                </span>
+              )}
+              {workout?.muscleGroups?.[1] && (
+                <span className="rounded-full bg-[#B8FF00] px-4 py-1.5 text-sm font-medium text-black">
+                  {workout.muscleGroups[1]}
+                </span>
+              )}
             </div>
 
             {/* Workout Information */}
@@ -66,7 +74,9 @@ const WorkoutDetailPage = async ({ params } :IWorkoutDetailPageProps) => {
                   EQUIPMENT
                 </span>
 
-                <span className="text-sm text-gray-200">{workout?.equipment}</span>
+                <span className="text-sm text-gray-200">
+                  {workout?.equipment}
+                </span>
               </div>
 
               <div className="flex items-center justify-between border-b border-[#232834] px-5 py-4">
@@ -74,7 +84,9 @@ const WorkoutDetailPage = async ({ params } :IWorkoutDetailPageProps) => {
                   DIFFICULTY
                 </span>
 
-                <span className="text-sm text-gray-200">{workout?.difficulty}</span>
+                <span className="text-sm text-gray-200">
+                  {workout?.difficulty}
+                </span>
               </div>
 
               <div className="flex items-center justify-between border-b border-[#232834] px-5 py-4">
@@ -94,7 +106,9 @@ const WorkoutDetailPage = async ({ params } :IWorkoutDetailPageProps) => {
                   DURATION
                 </span>
 
-                <span className="text-sm text-gray-200">{workout?.duration}</span>
+                <span className="text-sm text-gray-200">
+                  {workout?.duration}
+                </span>
               </div>
 
               <div className="flex items-center justify-between border-b border-[#232834] px-5 py-4">
@@ -102,7 +116,9 @@ const WorkoutDetailPage = async ({ params } :IWorkoutDetailPageProps) => {
                   CALORIES
                 </span>
 
-                <span className="text-sm text-gray-200">{workout?.calories} kcal</span>
+                <span className="text-sm text-gray-200">
+                  {workout?.calories} kcal
+                </span>
               </div>
 
               <div className="flex items-center justify-between border-b border-[#232834] px-5 py-4">
@@ -121,49 +137,37 @@ const WorkoutDetailPage = async ({ params } :IWorkoutDetailPageProps) => {
               <ol className="mt-3 font-inter space-y-3 text-sm text-gray-400">
                 <li className="flex gap-3">
                   <span>1.</span>
-                  <span>
-                    {workout?.instructions[0]}
-                  </span>
+                  <span>{workout?.instructions[0]}</span>
                 </li>
 
                 <li className="flex gap-3">
                   <span>2.</span>
-                  <span>
-                    {workout?.instructions[1]}
-                  </span>
+                  <span>{workout?.instructions[1]}</span>
                 </li>
 
                 <li className="flex gap-3">
                   <span>3.</span>
-                  <span>
-                   {workout?.instructions[2]}
-                  </span>
+                  <span>{workout?.instructions[2]}</span>
                 </li>
 
                 <li className="flex gap-3">
                   <span>4.</span>
-                  <span>
-                    {workout?.instructions[3]}
-                  </span>
+                  <span>{workout?.instructions[3]}</span>
                 </li>
               </ol>
             </div>
 
             {/* Buttons */}
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-             
-             <AddToPlanBtn workout={workout} />
+              <AddToPlanBtn workout={workout} />
 
-              <button className="btn btn-outline rounded-xl border-[#232834] text-gray-300 hover:border-[#B8FF00] hover:bg-transparent">
-                <FaRegBookmark size={16} />
-                Save for later
-              </button>
+              <SaveLaterBtn workout={workout} />
             </div>
           </div>
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default WorkoutDetailPage;

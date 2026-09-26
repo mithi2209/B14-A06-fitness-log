@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter,  Oswald } from "next/font/google";
 import "./globals.css";
+import { ToastContainer } from 'react-toastify';
 import Navbar from "@/Components/SharedCompo/Navbar";
 import Footer from "@/Components/SharedCompo/Footer";
 import WorkoutProvider from "@/context/WorkoutProvider";
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Navbar></Navbar>
             {children}
             <div className="border-b"></div>
+            <ToastContainer position="top-right" />
           <Footer></Footer>
         </WorkoutProvider>
       </body>
