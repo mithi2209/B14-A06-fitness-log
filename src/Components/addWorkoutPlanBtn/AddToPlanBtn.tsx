@@ -24,7 +24,7 @@ const AddToPlanBtn = ({ workout }: IAddToPlanBtnProps) => {
         const alreadyAdded = addToPlan.find((item) => item.id === workout.id);
 
         if (alreadyAdded) {
-            return toast.error(`This '${workout.name}' is already added to today's plan!`);
+            return toast.error(`This '${workout.name}'plan is already added to today's plan!`);
            
         }
         setAddToPlan([...addToPlan, workout]);

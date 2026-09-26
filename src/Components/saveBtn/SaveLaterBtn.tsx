@@ -25,7 +25,7 @@ const SaveLaterBtn = ({ workout }: IAddToPlanBtnProps) => {
             const alreadySaved = savePlan.find((item) => item.id === workout.id);
 
             if (alreadySaved) {
-                return toast.error(`This '${workout.name}' is already saved for later!`);
+                return toast.error(`This '${workout.name}'plan is already saved for later!`);
             }
         
             setSavePlan([...savePlan, workout]);

@@ -40,7 +40,7 @@ const Navbar = () => {
     <div className="">
       {/* sticky top-0 bg-[#0C0D10] */}
     
-      <div className="flex justify-between md:justify-between lg:justify-between items-center shadow-sm py-6 px-3 md:px-4 lg:px-8 gap-0 md:gap-8 lg:gap-0 ">
+      <div className="flex justify-between md:justify-between lg:justify-between items-center shadow-sm py-6 px-2 md:px-4 lg:px-8 gap-0 md:gap-8 lg:gap-0 ">
 
         {/* Hamburger */}
         <div className="dropdown lg:hidden">
@@ -74,7 +74,7 @@ const Navbar = () => {
           </div>
 
           {/* logo */}
-           <div className="flex justify-center items-center ml-0 md:ml-8 lg:ml-0 gap-1.5 md:gap-3">
+           <div className="flex justify-center items-center ml-1 md:ml-8 lg:ml-0 gap-1.5 md:gap-3">
                 <Image
                     src={logo} 
                     alt="navbar logo image">
@@ -94,7 +94,7 @@ const Navbar = () => {
           {/* Buttons */}
           <div className="gap-1 md:gap-0 lg:gap-5 flex justify-center items-center ">
 
-            <div className="btn border-none shadow-none bg-[#0C0D10]  hover:bg-[#222630] font-inter font-medium text-sm md:text-base tracking-wide gap-2 p-2 md:p-4 hidden md:flex">
+            <div className="btn border-none shadow-none bg-[#0C0D10]  hover:bg-[#222630] font-inter font-medium text-sm md:text-base tracking-wide gap-2 p-2 md:p-4 ">
 
                 <a className="text-[#9CA3AF]">Plan</a>
                 <span className="bg-[#C2F800] text-[#1A2312] px-2 py-0.5 rounded-full">
