@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { IoMdTime } from "react-icons/io";
 import { FaRegStar } from "react-icons/fa";
@@ -11,9 +12,10 @@ import Link from 'next/link';
 
 
 const SaveDataCard = () => {
-       const { savePlan } = useContext(workoutContext) as {
-        addToPlan: IExerciseLibraryDataTypes[];
-        };
+      const { savePlan } = useContext(workoutContext) as {
+       savePlan: IExerciseLibraryDataTypes[];
+       addToPlan: IExerciseLibraryDataTypes[];
+       };
  
     return (
         <section className="mx-4 md:mx-6 lg:mx-9 my-10 md:my-14 lg:my-16">

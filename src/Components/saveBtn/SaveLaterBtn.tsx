@@ -18,18 +18,18 @@ interface IAddToPlanBtnProps {
 
 const SaveLaterBtn = ({ workout }: IAddToPlanBtnProps) => {
 
-    const { savePlan, setSavePlan } = useContext(workoutContext);
+    const { savePlan, setSavePlan } = useContext(workoutContext)!;
 
         const handleSaveForLaterPlan = () => {
 
             const alreadySaved = savePlan.find((item) => item.id === workout.id);
 
             if (alreadySaved) {
-                return toast.error(`This '${workout.name}'plan is already saved for later!`);
+                return toast.error(`This '${workout.name}'plan is already saved for later !`);
             }
         
             setSavePlan([...savePlan, workout]);
-            toast.info(`'${workout.name}' saved for later !`);
+            toast.info(`'${workout.name}'workout saved for later .`);
 
     };
 

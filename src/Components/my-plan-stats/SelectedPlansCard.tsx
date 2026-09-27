@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { IoMdTime } from "react-icons/io";
 import { FaRegStar } from "react-icons/fa";
@@ -9,7 +11,7 @@ import { IExerciseLibraryDataTypes } from "../../app/Types/fitnessData";
 import Link from "next/link";
 import { toast } from "react-toastify";
 
-import { PlanTab } from "@/app/Types/planTypes";
+type PlanTab = "today" | "saved";
 
 interface SelectedPlansCardProps {
   plans: IExerciseLibraryDataTypes[];
@@ -17,31 +19,33 @@ interface SelectedPlansCardProps {
 }
 
 const SelectedPlansCard = ({ plans, activeTab }: SelectedPlansCardProps) => {
-  const { setAddToPlan, setSavePlan } = useContext(workoutContext);
+
+  const { setAddToPlan, setSavePlan } = useContext(workoutContext)!;
 
   const [alreadyDoneIds, setAlreadyDoneIds] = useState<
-    IExerciseLibraryDataTypes["id"][]
-  >([]);
+    IExerciseLibraryDataTypes["id"][]>([]);
 
-  // mark as done
+  // Mark as done btn
   const handleMarkAsDone = (workout: IExerciseLibraryDataTypes) => {
     const marked = alreadyDoneIds.includes(workout.id);
 
     if (marked) {
-      toast.info(`'${workout.name}' is already marked as done.`);
+      toast.warning(`'${workout.name}' is already marked as done!.`);
 
       return;
     }
-
     setAlreadyDoneIds([...alreadyDoneIds, workout.id]);
-    toast.success(`'${workout.name}' marked as done!`);
+    toast.success(`'${workout.name}'marked as done .`);
   };
 
+  // Remove btn
   const handleRemove = (workout: IExerciseLibraryDataTypes) => {
+
     if (activeTab === "today") {
       setAddToPlan((prev) => {
         return prev.filter((item) => item.id !== workout.id);
       });
+
     } else {
       setSavePlan((prev) => {
         return prev.filter((item) => item.id !== workout.id);

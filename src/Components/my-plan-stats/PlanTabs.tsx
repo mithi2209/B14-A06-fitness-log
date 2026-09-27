@@ -1,3 +1,7 @@
+
+"use client";
+
+import { Dispatch, SetStateAction } from 'react';
 import { PlanTab, SortOption } from '../../app/Types/fitnessData';
 
 
@@ -5,15 +9,11 @@ interface PlanTabsProps {
 
   activeTab: PlanTab;
 
-  setActiveTab: Dispatch<
-    React.SetStateAction<PlanTab>
-  >;
+    setActiveTab: Dispatch<SetStateAction<PlanTab>>;
 
   sortBy: SortOption;
 
-   setSortBy:Dispatch<
-    React.SetStateAction<SortOption>
-  >;
+     setSortBy: Dispatch<SetStateAction<SortOption>>;
 }
 
 
@@ -71,6 +71,7 @@ const PlanTabs = ({
 
                 </div>
 
+
                 {/* sort by  */}
 
                 <div className="flex justify-center items-center gap-3">
@@ -108,11 +109,10 @@ const PlanTabs = ({
                                 
                                 >Rating
                             </option>
-
-                           
-                            
                         </select>
+
                     </div>
+                    
                 </div>
             
             </div>

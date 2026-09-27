@@ -1,3 +1,5 @@
+"use client";
+
 import Link from 'next/link';
 
 
@@ -18,7 +20,7 @@ const EmptyPlanTab = () => {
           </p>
 
             <Link
-              href="/WorkOuts" >
+              href="/" >
                 <button className="btn mt-5 rounded-full border-none bg-[#B6FF00] px-6 text-sm font-semibold text-black hover:bg-[#b5e243]">
                   Go to workouts
                 </button>

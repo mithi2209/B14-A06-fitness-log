@@ -1,3 +1,4 @@
+"use client";
 import { IExerciseLibraryDataTypes } from '../../app/Types/fitnessData';
 
 
@@ -8,8 +9,6 @@ interface PlanStatsProps {
 const PlanStats = ({
     plans ,
     }:PlanStatsProps) => {
-
-
         
         // Total exercises
         const totalExercises = plans.length;

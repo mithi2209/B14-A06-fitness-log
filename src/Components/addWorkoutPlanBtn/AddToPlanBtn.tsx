@@ -16,7 +16,7 @@ interface IAddToPlanBtnProps {
 
 const AddToPlanBtn = ({ workout }: IAddToPlanBtnProps) => {
 
-    const { addToPlan, setAddToPlan } = useContext(workoutContext);
+    const { addToPlan, setAddToPlan } = useContext(workoutContext)!;
        
 
     const handleAddToTodaysPlan = () => {
@@ -28,7 +28,7 @@ const AddToPlanBtn = ({ workout }: IAddToPlanBtnProps) => {
            
         }
         setAddToPlan([...addToPlan, workout]);
-        toast.success(`'${workout.name}' added to today's plan!`);
+        toast.success(`'${workout.name}'workout added to today's plan .`);
     };
 
     return (

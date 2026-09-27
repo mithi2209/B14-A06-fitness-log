@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 
 const Navbar = () => {
 
-  const {addToPlan, savePlan } = useContext(workoutContext);
+  const {addToPlan, savePlan } = useContext(workoutContext)!;
 
   const pathname = usePathname();
 
@@ -92,24 +92,25 @@ const Navbar = () => {
           </div>
 
           {/* Buttons */}
+          {/* Plan Count */}
           <div className="gap-1 md:gap-0 lg:gap-5 flex justify-center items-center ">
 
-            <div className="btn border-none shadow-none bg-[#0C0D10]  hover:bg-[#222630] font-inter font-medium text-sm md:text-base tracking-wide gap-2 p-2 md:p-4 ">
+            <Link href="/my-plan" className="btn border-none shadow-none bg-[#0C0D10]  hover:bg-[#222630] font-inter font-medium text-sm md:text-base tracking-wide gap-2 p-2 md:p-4 ">
 
-                <a className="text-[#9CA3AF]">Plan</a>
-                <span className="bg-[#C2F800] text-[#1A2312] px-2 py-0.5 rounded-full">
-                    {addToPlan.length}
+                <p  className="text-[#9CA3AF]">Plan</p>
+                  <span className="bg-[#C2F800] text-[#1A2312] px-2 py-0.5 rounded-full">
+                  {addToPlan.length}
 
                 </span>
-            </div>
+            </Link>
+          {/* Save Count */}
+            <Link href="/my-plan" className="btn border-none shadow-none bg-[#0C0D10] hover:bg-[#222630] font-inter font-medium text-sm md:text-base tracking-wide gap-2 p-2 md:p-4">
 
-            <div className="btn border-none shadow-none bg-[#0C0D10] hover:bg-[#222630] font-inter font-medium text-sm md:text-base tracking-wide gap-2 p-2 md:p-4">
-
-                <a className="text-[#9CA3AF]">Saved</a>
-                <span className="bg-[#1A2312] text-white px-2 py-0.5 rounded-full">
-                    {savePlan.length}
-                </span>
-            </div>
+                <p className="text-[#9CA3AF]">Saved</p>
+                  <span className="bg-[#1A2312] text-white px-2 py-0.5 rounded-full">
+                      {savePlan.length}
+                   </span>
+            </Link>
           
           </div>
 

@@ -2,7 +2,7 @@
 "use client";
 
 import { IExerciseLibraryDataTypes } from "@/app/Types/fitnessData";
-import { createContext ,ReactNode, useState } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 ;
 
 interface WorkoutContextType {
@@ -20,7 +20,9 @@ interface WorkoutContextType {
 }
 
 
-export const workoutContext = createContext<WorkoutContextType | undefined>(undefined);
+export const workoutContext = createContext<WorkoutContextType | undefined>
+(undefined);
+
 
 const WorkoutProvider = ({ children}: { children: ReactNode }) => {
 

@@ -1,4 +1,5 @@
 "use client";
+
 import PlanStats from "@/Components/my-plan-stats/PlanStats";
 import PlanTabs from "@/Components/my-plan-stats/PlanTabs";
 import EmptyPlanTab from "@/Components/my-plan-stats/EmptyPlanTab";
@@ -11,7 +12,7 @@ import { PlanTab, SortOption } from '../Types/fitnessData';
 
 
 const MyPlanPage = () => {
-     const { addToPlan, savePlan } = useContext(workoutContext) ;
+     const { addToPlan, savePlan } = useContext(workoutContext)! ;
 
 
     const [activeTab, setActiveTab] = useState<PlanTab>("today");
@@ -37,21 +38,14 @@ const MyPlanPage = () => {
         const sortedPlans = [...currentPlans];
         
         // Sort by Duration
-        
-
         if (sortBy === "duration") {
 
             sortedPlans.sort((a, b) => {
-            return Number(b.duration) - Number(a.duration);
+            return Number(a.duration) - Number(b.duration);
             });
 
         }
-
-
-       
-            // Sort by Rating
-       
-
+        // Sort by Rating
         if (sortBy === "rating") {
 
             sortedPlans.sort((a, b) => {
@@ -59,18 +53,13 @@ const MyPlanPage = () => {
             });
 
         }
-
-
      
-            // Sort by Calories
-        
-
+        // Sort by Calories
         if (sortBy === "caloriesBurned") {
 
             sortedPlans.sort((a, b) => {
-            return Number(b.rating) - Number(a.rating);
+            return Number(b.caloriesBurned) - Number(a.caloriesBurned);
             });
-
         }
     
     return (
@@ -88,7 +77,6 @@ const MyPlanPage = () => {
             {sortedPlans.length === 0 ? (
 
                 <EmptyPlanTab
-                    activeTab={activeTab}
                         />
 
                     ) : (
