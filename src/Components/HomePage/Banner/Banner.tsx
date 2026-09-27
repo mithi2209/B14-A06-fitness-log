@@ -15,7 +15,7 @@ const Banner = () => {
                         EVERY SET.
                     </h1>
 
-                    <p className="text-sm lg:text-lg text-[#9CA3AF] font-inter text-center md:text-left mx-auto md:mx-0 w-[90%] md:w-[65%] lg:w-[55%]">FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today's plan, and watch the week's work add up.
+                    <p className="text-sm lg:text-lg text-[#9CA3AF] font-inter text-center md:text-left mx-auto md:mx-0 w-[90%] md:w-[65%] lg:w-[55%]">FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today&apos;s plan, and watch the week&apos;s work add up.
 
                     </p>
 
@@ -26,6 +26,7 @@ const Banner = () => {
 
                 <div>
                     <Image 
+                    
                         src={BannerImg}
                         alt="banner image"
                         >

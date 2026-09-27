@@ -40,8 +40,8 @@ const Navbar = () => {
     </>
   
   return (
-    <div className="">
-      {/* sticky top-0 bg-[#0C0D10] */}
+    <div className="sticky top-0 bg-[#0C0D10]">
+     
     
       <div className="flex justify-between md:justify-between lg:justify-between items-center shadow-sm py-6 px-2 md:px-4 lg:px-8 gap-0 md:gap-8 lg:gap-0 ">
 
@@ -76,8 +76,9 @@ const Navbar = () => {
               {/* Search Input */}
               <div className="">
                   <input
-                   value={searchText}
+                    value={searchText}
                     onChange={(e)=> setSearchText(e.target.value)}
+                    
                     className="border-[#222630] border w-32 rounded-md bg-[#0C0D10] font-inter font-medium text-gray-300 text-xs p-2"
                     type="text"
                     placeholder="Search workouts..."
@@ -122,19 +123,20 @@ const Navbar = () => {
                />
             </div>
 
-            <Link href="/my-plan" className="btn border-none shadow-none bg-[#0C0D10] hover:bg-[#222630] font-inter font-medium text-sm md:text-base tracking-wide gap-2 p-2 md:p-4 ">
+            <Link href="/my-plan" className="btn border-none shadow-none bg-[#0C0D10] hover:bg-[#222630] font-inter font-medium text-sm md:text-base tracking-wide gap-2 px-1.5 md:p-4 ">
 
                 <p  className="text-[#9CA3AF]">Plan</p>
-                  <span className="bg-[#C2F800] text-[#1A2312] px-2 py-0.5 rounded-full">
+                  <span className="bg-[#C2F800] text-[#1A2312] px-1.5 md:px-3 rounded-full">
                   {addToPlan.length}
 
                 </span>
             </Link>
           {/* Save Count */}
-            <Link href="/my-plan" className="btn border-none shadow-none bg-[#0C0D10] hover:bg-[#222630] font-inter font-medium text-sm md:text-base tracking-wide gap-2 p-2 md:p-4">
+            <Link href="/my-plan" className="btn border-none shadow-none bg-[#0C0D10] hover:bg-[#222630] font-inter font-medium text-sm md:text-base tracking-wide gap-2 p-1.5 md:p-4">
 
                 <p className="text-[#9CA3AF]">Saved</p>
-                  <span className="bg-[#1A2312] text-white px-2 py-0.5 rounded-full">
+
+                  <span className="bg-[#1A2312] border  border-[##C2F800] text-white px-1.5 md:px-3 rounded-full">
                       {savePlan.length}
                    </span>
             </Link>

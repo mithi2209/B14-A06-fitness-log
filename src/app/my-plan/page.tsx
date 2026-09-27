@@ -12,8 +12,7 @@ import { PlanTab, SortOption } from '../Types/fitnessData';
 
 
 const MyPlanPage = () => {
-     const { addToPlan, savePlan } = useContext(workoutContext)! ;
-
+     const { addToPlan, savePlan , searchText} = useContext(workoutContext)! ;
 
     const [activeTab, setActiveTab] = useState<PlanTab>("today");
 
@@ -34,14 +33,29 @@ const MyPlanPage = () => {
 
             }
 
+            
+         //  Search text 
+        const trimSearchText = searchText.toLocaleLowerCase().trim() ;
 
-        const sortedPlans = [...currentPlans];
+        const plansAfterFilter = currentPlans.filter((workout)=>{
+
+            const workoutName = workout.name.toLowerCase().trim();
+            const equipmentName = workout.equipment.toLowerCase().trim();
+
+            return (
+                workoutName.includes(trimSearchText) ||
+                equipmentName.includes(trimSearchText)
+            );
+        }); 
+
+        // Sort By
+        const sortedPlans = [...plansAfterFilter];
         
         // Sort by Duration
         if (sortBy === "duration") {
 
             sortedPlans.sort((a, b) => {
-            return Number(a.duration) - Number(b.duration);
+            return Number(b.duration) - Number(a.duration);
             });
 
         }
@@ -73,7 +87,35 @@ const MyPlanPage = () => {
                 setSortBy={setSortBy}
             ></PlanTabs>
 
-    
+
+
+            {
+                currentPlans.length === 0 ?(
+                    <EmptyPlanTab></EmptyPlanTab>
+                )
+                :( plansAfterFilter.length === 0 
+                    ? (
+                        <div className="col-span-full py-16 text-center">
+                                <h2 className="text-white font-oswald md:text-3xl text-2xl   font-bold"> 
+                                Searched workout Not Found
+                                </h2>
+
+                                <p className="font-inter text-sm md:text-base text-[#9CA3AF]  mt-2">
+                                    Try another workout name or muscle group.
+                                </p>
+
+                        </div>
+                    ):(
+                        <SelectedPlansCard
+                            plans={sortedPlans}
+                            activeTab={activeTab}>
+                        </SelectedPlansCard>
+                    )
+                    
+                )
+            }
+
+{/*     
             {sortedPlans.length === 0 ? (
 
                 <EmptyPlanTab
@@ -82,11 +124,11 @@ const MyPlanPage = () => {
                     ) : (
 
                 <SelectedPlansCard
-                    plans={sortedPlans}
+                    plans={plansAfterFilter}
                     activeTab={activeTab}
                     />
 
-           )}
+           )} */}
      
           
       </div>  

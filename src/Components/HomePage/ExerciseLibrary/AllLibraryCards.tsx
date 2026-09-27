@@ -14,7 +14,7 @@ const AllLibraryCards = ({ data }: { data: TDataCardsProps }) => {
 
     <Link href={`/WorkOuts/${data.id}`}>
 
-        <div className=" overflow-hidden shadow-xl rounded-2xl border border-[#222630] bg-[#15171D]">
+        <div className=" overflow-hidden shadow-xl rounded-2xl border border-[#222630] bg-[#15171D] hover:border-[#C2F800]">
             <div className="overflow-hidden">
             <Image
                 className=" block w-full h-52 rounded-t-2xl object-cover"
