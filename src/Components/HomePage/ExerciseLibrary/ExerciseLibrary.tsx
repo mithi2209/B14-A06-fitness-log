@@ -1,6 +1,7 @@
 import getAllLibraryData from "@/lib/page";
 import AllLibraryCards from "./AllLibraryCards";
 import { IExerciseLibraryDataTypes } from "@/app/Types/fitnessData";
+import LibrarySearch from "./LibrarySearch";
 
 
 const ExerciseLibrary = async() => {
@@ -18,7 +19,7 @@ const ExerciseLibrary = async() => {
             </div>
 
             {/* CARDS */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mt-10">
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mt-10">
                {
                     libraryData.map((data: IExerciseLibraryDataTypes) =>{
                         return(
@@ -31,8 +32,9 @@ const ExerciseLibrary = async() => {
                         );
                     })
                }
-                
-            </div>
+               
+            </div> */}
+            <LibrarySearch libraryData={libraryData}></LibrarySearch>
         </div>
     );
 };

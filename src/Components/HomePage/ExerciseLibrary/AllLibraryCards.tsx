@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { IoMdTime } from "react-icons/io";
 import { FaRegStar } from "react-icons/fa";

@@ -10,7 +10,10 @@ import { usePathname } from "next/navigation";
 
 const Navbar = () => {
 
-  const {addToPlan, savePlan } = useContext(workoutContext)!;
+  const {addToPlan,
+          savePlan ,
+          searchText,
+          setSearchText } = useContext(workoutContext)!;
 
   const pathname = usePathname();
 
@@ -48,7 +51,7 @@ const Navbar = () => {
               <svg
                 aria-label="Menu"
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="h-7 w-7"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -61,13 +64,26 @@ const Navbar = () => {
                   d="M4 6h16M4 12h8m-8 6h16"
                 />{" "}
               </svg>
+           
             </div>
             {/* links for small device */}
             <ul
               tabIndex={-1}
-              className="menu menu-sm dropdown-content bg-[#0C0D10] border rounded-box z-1 mt-3 w-52 p-2 shadow font-inter text-sm text-[#9CA3AF] font-semibold gap-3"
+              className="menu menu-sm dropdown-content bg-[#0C0D10] border rounded-box z-1 mt-3 mb-4 w-52 p-2 shadow font-inter text-sm text-[#9CA3AF] font-semibold gap-3"
             >
               {links}
+
+              {/* Search Input */}
+              <div className="">
+                  <input
+                   value={searchText}
+                    onChange={(e)=> setSearchText(e.target.value)}
+                    className="border-[#222630] border w-32 rounded-md bg-[#0C0D10] font-inter font-medium text-gray-300 text-xs p-2"
+                    type="text"
+                    placeholder="Search workouts..."
+                />
+              </div>
+              
 
             </ul>
 
@@ -95,7 +111,18 @@ const Navbar = () => {
           {/* Plan Count */}
           <div className="gap-1 md:gap-0 lg:gap-5 flex justify-center items-center ">
 
-            <Link href="/my-plan" className="btn border-none shadow-none bg-[#0C0D10]  hover:bg-[#222630] font-inter font-medium text-sm md:text-base tracking-wide gap-2 p-2 md:p-4 ">
+            {/* Search Input */}
+            <div className="hidden lg:flex">
+                 <input
+                  value={searchText}
+                  onChange={(e)=> setSearchText(e.target.value)}
+                  className="border-[#222630] border w-32 rounded-md bg-[#0C0D10] font-inter font-medium text-gray-300 text-xs p-2"
+                  type="text"
+                  placeholder="Search workouts..."
+               />
+            </div>
+
+            <Link href="/my-plan" className="btn border-none shadow-none bg-[#0C0D10] hover:bg-[#222630] font-inter font-medium text-sm md:text-base tracking-wide gap-2 p-2 md:p-4 ">
 
                 <p  className="text-[#9CA3AF]">Plan</p>
                   <span className="bg-[#C2F800] text-[#1A2312] px-2 py-0.5 rounded-full">

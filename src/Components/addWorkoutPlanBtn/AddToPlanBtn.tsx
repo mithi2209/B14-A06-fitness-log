@@ -17,30 +17,54 @@ interface IAddToPlanBtnProps {
 const AddToPlanBtn = ({ workout }: IAddToPlanBtnProps) => {
 
     const { addToPlan, setAddToPlan } = useContext(workoutContext)!;
+
+
+    const alreadyAdded = addToPlan.find((item) => item.id === workout.id);
+
+    const planFull = addToPlan.length >= 5;
        
 
     const handleAddToTodaysPlan = () => {
-
-        const alreadyAdded = addToPlan.find((item) => item.id === workout.id);
-
+        // Check if the workout is already added to the plan
         if (alreadyAdded) {
-            return toast.error(`This '${workout.name}'plan is already added to today's plan!`);
+            return toast.error(`" ${workout.name} " plan is already added to today's plan!`);
            
         }
+
+        // after 5 plans added, show error toast
+        if(planFull) {
+            return toast.warning(`You can only add 5 plans to today's plan!`);
+        }
+
+        // new plan added to today's plan
         setAddToPlan([...addToPlan, workout]);
-        toast.success(`'${workout.name}'workout added to today's plan .`);
+        toast.success(`" ${workout.name} " workout added to today's plan .`);
     };
 
     return (
-         <button 
-                className="btn border-0 rounded-xl bg-[#B8FF00] text-black hover:bg-[#a8eb00]" 
+        <button 
 
-                onClick={handleAddToTodaysPlan}>
+            onClick={handleAddToTodaysPlan}
+            disabled={planFull}
 
-                <FaRegCalendarPlus size={16} />
-                Add to today&apos;s plan
+            className={`btn border-0 rounded-xl
 
-            </button>
+                ${planFull
+                    ? "bg-gray-400 text-gray-700 cursor-not-allowed"
+                    : "bg-[#B8FF00] text-black hover:bg-[#a8eb00]"
+                }
+                
+            `}>
+                     
+
+            <FaRegCalendarPlus size={16} />
+
+              {planFull
+                ? "Adding to plan is full"
+                : "Add to today's plan"
+                }
+
+        </button>
     );
 };
 

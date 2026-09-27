@@ -9,17 +9,23 @@ const Footer = () => {
         <div className=" ">
             <div className="flex flex-col md:flex-col lg:flex-row gap-5 justify-center lg:justify-between items-center py-6 px-3 md:px-4 lg:px-8">
 
-                <div className="flex justify-center items-center  gap-1.5 md:gap-3">
+                <div className="flex justify-center items-center gap-1.5 md:gap-2">
 
                     <Image
+                        className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6"
                         src={FooterLogo} 
                         alt="footer logo" 
                         width={30} height={30}>
 
                      </Image>
                     
-                    <span className="text-lg md:text-xl lg:text-2xl font-extrabold font-oswald tracking-wider text-white" >       <Link href="/">FITLOGO</Link>
+                    <span 
+                        className="text-lg md:text-xl lg:text-2xl font-extrabold font-oswald tracking-wider text-white"> 
+
+                        <Link href="/">FITLOGO</Link>
+
                     </span>
+
                 </div>
 
                 <div>

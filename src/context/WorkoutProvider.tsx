@@ -17,6 +17,9 @@ interface WorkoutContextType {
   setSavePlan: React.Dispatch<
     React.SetStateAction<IExerciseLibraryDataTypes[]>
   >;
+
+  searchText: string;
+  setSearchText: React.Dispatch<React.SetStateAction<string>>;
 }
 
 
@@ -34,12 +37,16 @@ const WorkoutProvider = ({ children}: { children: ReactNode }) => {
     IExerciseLibraryDataTypes[]
   >([]);
 
+    const[searchText, setSearchText] = useState("");
+
     const sharedWorkoutDataState = {
 
         addToPlan,
         setAddToPlan,
         savePlan,
-        setSavePlan
+        setSavePlan ,
+        searchText,
+        setSearchText,
     };
 
     return (
