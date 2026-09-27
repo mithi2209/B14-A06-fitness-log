@@ -20,12 +20,6 @@ const WorkoutDetailPage = async ({ params }: IWorkoutDetailPageProps) => {
     (workout: IExerciseLibraryDataTypes) => String(workout.id) === String(id),
   );
 
-  if (!workout) {
-    return (
-     <WorkoutEmptyPage></WorkoutEmptyPage>
-    );
-  }
-
   return (
     <div className="mx-4 md:mx-6 lg:mx-9  my-10 md:my-14 lg:my-16">
       <div className="shadow-xl rounded-2xl border border-[#222630]  px-2 py-7 lg:py-10 lg:px-7">

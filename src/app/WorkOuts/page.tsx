@@ -1,28 +1,40 @@
-import Link from "next/link";
-import React from "react";
 
-const WorkoutEmptyPage = () => {
+import getAllLibraryData from "@/lib/page";
+import AllLibraryCards from '@/Components/HomePage/ExerciseLibrary/AllLibraryCards';
+import { IExerciseLibraryDataTypes } from '../Types/fitnessData';
+
+
+const WorkoutPage = async() => {
+
+  const workoutData = await getAllLibraryData();
+
   return (
-    <section className="mx-4 md:mx-6 lg:mx-9  my-10 md:my-14 lg:my-40">
-      <div className="bg-[#111216] flex items-center justify-center rounded-xl  border border-dashed border-[#292D35] py-30">
-        <div className="text-center">
-          <h3 className="font-oswald tracking-wider text-xl font-bold uppercase text-white">
-            NOTHING HERE YET
-          </h3>
 
-          <p className="mt-2 font-normal text-sm lg:text-base text-[#8A92A0]">
-            Browse the library and add a Plan to see details.
-          </p>
-
-          <Link href="/">
-                <button className="btn mt-5 rounded-full border-none bg-[#B6FF00] px-6 text-sm font-semibold text-black hover:bg-[#b5e243]">
-                    Go to Library
-                </button>
-          </Link>
+    <section className="mx-4 md:mx-6 lg:mx-9  my-10 md:my-14 lg:my-16">
+       {/* Heading */}
+        <div className="text-center  ">
+                <h2 className="font-oswald font-bold text-2xl md:text-3xl text-white ">All Workouts</h2>
+                <p className="font-inter text-sm lg:text-base text-[#9CA3AF] mt-3">Explore every workout for major muscle group.</p>
         </div>
-      </div>
+
+        {/* cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mt-10">
+            {
+              workoutData.map((data: IExerciseLibraryDataTypes) =>{
+                return(
+                  <AllLibraryCards
+                    key={data.id}
+                    data ={ data }>
+
+                    </AllLibraryCards>
+                  );
+              })
+            }
+          
+        </div>
+        
     </section>
   );
 };
 
-export default WorkoutEmptyPage;
+export default WorkoutPage;

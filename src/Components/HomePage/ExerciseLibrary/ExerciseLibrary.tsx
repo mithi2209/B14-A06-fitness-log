@@ -1,7 +1,6 @@
 import getAllLibraryData from "@/lib/page";
-import AllLibraryCards from "./AllLibraryCards";
-import { IExerciseLibraryDataTypes } from "@/app/Types/fitnessData";
 import LibrarySearch from "./LibrarySearch";
+
 
 
 const ExerciseLibrary = async() => {
@@ -35,6 +34,7 @@ const ExerciseLibrary = async() => {
                
             </div> */}
             <LibrarySearch libraryData={libraryData}></LibrarySearch>
+            
         </div>
     );
 };
