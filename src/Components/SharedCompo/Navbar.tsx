@@ -79,7 +79,8 @@ const Navbar = () => {
                     value={searchText}
                     onChange={(e)=> setSearchText(e.target.value)}
                     
-                    className="border-[#222630] border w-32 rounded-md bg-[#0C0D10] font-inter font-medium text-gray-300 text-xs p-2"
+                    className="border-[#222630] rounded-full md:rounded-full lg:rounded-md border w-full md:w-full lg:w-32  bg-[#0C0D10] font-inter font-medium lg:text-gray-300 text-xs px-3 py-2 lg:px-2 lg:py-2"
+
                     type="text"
                     placeholder="Search workouts..."
                 />
@@ -117,7 +118,9 @@ const Navbar = () => {
                  <input
                   value={searchText}
                   onChange={(e)=> setSearchText(e.target.value)}
-                  className="border-[#222630] border w-32 rounded-md bg-[#0C0D10] font-inter font-medium text-gray-300 text-xs p-2"
+                  
+                  className="border-[#222630] rounded-full md:rounded-full lg:rounded-md border w-full md:w-full lg:w-32  bg-[#0C0D10] font-inter font-medium lg:text-gray-300 text-xs px-3 py-2 lg:px-2 lg:py-2"
+
                   type="text"
                   placeholder="Search workouts..."
                />
