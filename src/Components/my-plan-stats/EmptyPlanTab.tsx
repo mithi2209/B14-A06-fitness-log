@@ -11,7 +11,7 @@ const EmptyPlanTab = () => {
       <div className="bg-[#111216] flex items-center justify-center rounded-xl  border border-dashed border-[#292D35] py-30">
         <div className="text-center">
 
-          <h3 className="font-oswald tracking-wider text-xl font-bold uppercase text-white">
+          <h3 className="font-oswald tracking-wider text-xl lg:text-2xl font-bold uppercase text-white">
             NOTHING HERE YET
           </h3>
 
@@ -20,7 +20,7 @@ const EmptyPlanTab = () => {
           </p>
 
             <Link
-              href="/" >
+              href="/workouts" >
                 <button className="btn mt-5 rounded-full border-none bg-[#B6FF00] px-6 text-sm font-semibold text-black hover:bg-[#b5e243]">
                   Go to workouts
                 </button>
